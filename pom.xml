@@ -4,6 +4,7 @@
   <artifactId>Hello</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>HelloWorld</name>
+
   <build>
     <plugins>
       <plugin>

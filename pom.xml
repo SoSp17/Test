@@ -4,6 +4,7 @@
   <artifactId>Hello</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>HelloWorld</name>
+
   <properties>
   <java.version>11</java.version>
   <maven.compiler.source>11</maven.compiler.source>
@@ -39,7 +40,9 @@
     </plugins>
   </build>
 
+
   <reporting>
+
     <plugins>
       <plugin>
         <groupId>com.github.spotbugs</groupId>
@@ -48,6 +51,8 @@
        
       </plugin>
     </plugins>
+
+
   </reporting>
   
   <profiles>

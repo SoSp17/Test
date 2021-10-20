@@ -4,9 +4,12 @@ import java.util.Scanner;
   
 public class HelloWorld {
 	
+
 	public static int Math(int a) {
 		return(a+a);
 	};
+
+
 	public static void main(String[] args) {
 		int b=0;
 		int erg;

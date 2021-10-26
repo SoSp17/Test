@@ -4,8 +4,7 @@ import java.util.Scanner;
   
 public class HelloWorld {
 	
-
-	public static int Math(int a) {
+	public static int math(int a) {
 		return(a+a);
 	};
 
@@ -19,7 +18,7 @@ public class HelloWorld {
 	Scanner scanner=new Scanner(System.in);
 	b=scanner.nextInt();
 		
-		erg=Math(b);
+		erg=math(b);
 
 		System.out.println(erg);
 	}

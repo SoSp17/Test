@@ -6,9 +6,9 @@
   <name>HelloWorld</name>
 
   <properties>
-    <java.version>11</java.version>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <java.version>16</java.version>
+    <maven.compiler.source>16</maven.compiler.source>
+    <maven.compiler.target>16</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -18,6 +18,16 @@
       <version>4.4</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>3.8.1</version>
+    </dependency>
+	<dependency>
+	  <groupId>com.h3xstream.findsecbugs</groupId>
+	  <artifactId>findsecbugs-plugin</artifactId>
+	  <version>1.11.0</version>
+	</dependency>
   </dependencies>
   
   <build>
@@ -37,31 +47,7 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.7</version>
       </plugin>
-      <plugin>
-      <groupId>com.github.spotbugs</groupId>
-      <artifactId>spotbugs-maven-plugin</artifactId>
-      <version>4.0.4</version>
-      <configuration>
-        	<efford>Max</efford>
-        	<threshold>Low</threshold>
-        	<failOnError>true</failOnError>
-        	<includeFilterFiles>src/test/resources/spotbugs-security-include.xml</includeFilterFiles>
-        	<excludeFilterFiles>src/test/resources/spotbugs-security-exclude.xml</excludeFilterFiles>
-        	<plugins>
-        		<plugin>
-        		<groupId>com.h3xstream.findsecbugs</groupId>
-        		<arttifactId>findsecbugs-plugin</arttifactId>
-        		<version>1.10.1</version>
-        		<executions>
-        			<phase>package</phase>
-        			<goals>
-        				<goal>check</goal>
-        			</goals>
-        		</executions>
-        		</plugin>
-        	</plugins>
-        </configuration>
-      </plugin>
+
     </plugins>
   </build>
 
@@ -70,6 +56,7 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
+      
       </plugin>
     </plugins>
   </reporting>

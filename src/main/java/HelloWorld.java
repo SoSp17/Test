@@ -1,4 +1,4 @@
-import java.io.IOException;
+
 import java.util.Scanner;
 
   
@@ -21,6 +21,7 @@ public class HelloWorld {
 		erg=math(b);
 
 		System.out.println(erg);
+		scanner.close();
 	}
 
 

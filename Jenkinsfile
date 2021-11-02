@@ -14,7 +14,8 @@ pipeline{
         stage("build"){
             steps{
         echo'building'
-        sh 'mvn clean compile'
+       /* sh 'mvn clean compile'*/
+       build quietPeriod: 5, job: 'Test1'
             }
         }
         stage("test"){

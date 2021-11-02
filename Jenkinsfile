@@ -10,6 +10,7 @@ pipeline{
         echo'checking out'
         /*checkout scm*/
         /*git 'https://github.com/SoSp17/Test.git'*/
+        checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SoSp17/Test.git']]])
             }
         }
         stage("build"){

@@ -1,9 +1,8 @@
 pipeline{
     agent any
-    tools{
+    /*tools{*/
     /*maven*/
-    }
-    
+   /* }*/    
     stages{
 		stage("checkout"){
             steps{

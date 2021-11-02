@@ -8,13 +8,14 @@ pipeline{
 		stage("checkout"){
             steps{
         echo'checking out'
-        git 'https://github.com/SoSp17/Test.git'
+        /*checkout scm*/
+        /*git 'https://github.com/SoSp17/Test.git'*/
             }
         }
         stage("build"){
             steps{
         echo'building'
-        sh 'mvn clean compile'
+        /*sh 'mvn clean compile'*/
             }
         }
         stage("test"){

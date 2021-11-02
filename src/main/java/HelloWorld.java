@@ -21,7 +21,8 @@ public class HelloWorld {
 		erg=math(b);
 
 		System.out.println(erg);
-	
+
+		System.out.println("Hallo");
 		scanner.close();
 	}
 

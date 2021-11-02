@@ -1,8 +1,8 @@
 pipeline{
     agent any
-    /*tools{*/
-    /*maven*/
-   /* }*/    
+    tools{
+    maven 'maven-3.8.3'
+    }    
     stages{
 		stage("checkout"){
             steps{
@@ -14,8 +14,8 @@ pipeline{
         stage("build"){
             steps{
         echo'building'
-       /* sh 'mvn clean compile'*/
-       build quietPeriod: 5, job: 'Test1'
+        sh 'mvn clean compile'
+       /*build quietPeriod: 5, job: 'Test1'*/
             }
         }
         stage("test"){

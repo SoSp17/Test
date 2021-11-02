@@ -6,16 +6,15 @@ pipeline{
     stages{
 		stage("checkout"){
             steps{
-        echo'checking out'
-        /*checkout scm*/
-        /*git 'https://github.com/SoSp17/Test.git'*/
-        checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SoSp17/Test.git']]])
+        	echo'checking out'
+        	/*checkout scm, Code im Snippet Generator Generiert */
+        	checkout([$class: 'GitSCM', branches: [[name: '*/*']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/SoSp17/Test.git']]])
             }
         }
         stage("build"){
             steps{
         echo'building'
-        /*sh 'mvn clean compile'*/
+        sh 'mvn clean compile'
             }
         }
         stage("test"){

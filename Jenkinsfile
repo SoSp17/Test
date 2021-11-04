@@ -25,12 +25,10 @@ pipeline{
         	echo'testing'
         	sh 'mvn test'
 			 
- 			}
- 			post{
- 			    always{
+ 			
  			        junit '**/target/surefire-reports/TEST-*.xml'
  			        junit skipPublishingChecks:true, testResults: 'test-results.xml'
- 			    }
+ 			    
 
  			}
 

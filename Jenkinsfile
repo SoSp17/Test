@@ -27,13 +27,7 @@ pipeline{
         	junit '**/target/surefire-reports/TEST-*.xml'
         	/*Sonarqube*/
             }
-            post{
-                always {
-                    
-                }
-
-            }
-
+ 
         }
         stage("deploy"){
             steps{

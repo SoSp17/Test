@@ -24,12 +24,8 @@ pipeline{
             steps{
         	echo'testing'
         	sh 'mvn test'
-			 
- 			
  			        junit '**/target/surefire-reports/TEST-*.xml'
- 			        junit skipPublishingChecks:true, testResults: 'test-results.xml'
- 			    
-
+ 			       
  			}
 
         }

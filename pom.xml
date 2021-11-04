@@ -31,6 +31,7 @@
   </dependencies>
   
   <build>
+  <pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugin</groupId>
@@ -47,8 +48,13 @@
         <artifactId>jacoco-maven-plugin</artifactId>
         <version>0.8.7</version>
       </plugin>
-
+	  <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-surfire-plugin</artifactId>
+		<version>3.0.0-M5</version>
+	  </plugin>
     </plugins>
+    </pluginManagement>
   </build>
 
   <reporting>

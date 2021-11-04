@@ -22,10 +22,17 @@ pipeline{
         }
         stage("test"){
             steps{
-        echo'testing'
-        sh 'mvn test'
-        /*Sonarqube*/
+        	echo'testing'
+        	sh 'mvn test'
+        	/*Sonarqube*/
             }
+            post{
+                always {
+                    junit "**/target/surfire-reports/TEST-*.xml"
+                }
+
+            }
+
         }
         stage("deploy"){
             steps{

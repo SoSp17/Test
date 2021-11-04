@@ -25,6 +25,8 @@ pipeline{
         	echo'testing'
         	sh 'mvn test'
         	junit '**/target/surefire-reports/TEST-*.xml'
+        	withSonarQubeEnv('sonarserver')
+        	sh 'mvn sonar:sonar'
         	/*Sonarqube*/
             }
  

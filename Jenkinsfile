@@ -30,20 +30,18 @@ pipeline{
 
         }
 
+  node {
   stage('SCM') {
-  steps{
-      checkout scm
-      }
+    checkout scm
   }
   stage('SonarQube Analysis') {
-  steps{
-
-    def mvn = tool 'Maven';
+    def mvn = tool 'Default Maven';
     withSonarQubeEnv() {
       sh "${mvn}/bin/mvn clean verify sonar:sonar"
-      }
     }
   }
+}
+  
 
         
         stage("deploy"){

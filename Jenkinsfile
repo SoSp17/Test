@@ -32,7 +32,7 @@ pipeline{
         
     	stage("SonarQube"){
     	steps{
-        withSonarQubeEnv('SonarJenkins')
+        /*withSonarQubeEnv('SonarJenkins')*/
         sh 'cd eclipse-workspace/Hello/'
         sh 'mvn clean verify sonar:sonar -Dsonar.projektKey=HelloWorld -Dsonar.host.url=http://locahost:9000 -Dsonar.login=admin -Dsonar.password=admin123'
         }

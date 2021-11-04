@@ -24,16 +24,20 @@ pipeline{
             steps{
         	echo'testing'
         	sh 'mvn test'
-        	junit '**/target/surefire-reports/TEST-*.xml'
+        	
+        	withSonarQubeEnv('sonarserver')
+        	sh 'mvn sonar:sonar'
         	/*Sonarqube*/
-            }
-            post{
-                always {
-                    
-                }
+    step([ $class:'JUnitResultArchiver' ]){
+               
+           
 
+ junit '**/target/surefire-reports/TEST-*.xml' 
+ }
             }
+    
 
+ 
         }
         stage("deploy"){
             steps{

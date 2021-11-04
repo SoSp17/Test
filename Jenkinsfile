@@ -32,7 +32,7 @@ pipeline{
         
     	stage("SonarQube"){
     	steps{
-        withSonarQubeEnv('sonarserver')
+        withSonarQubeEnv('SonarJenkins')
         sh 'mvn sonar:sonar'
         }
     	}

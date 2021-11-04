@@ -29,15 +29,17 @@ pipeline{
  			}
 
         }
-        
-    	stage("SonarQube"){
-    	steps{
-        /*withSonarQubeEnv('SonarJenkins')*/
-        sh 'cd eclipse-workspace/Hello/'
-        sh 'mvn clean verify sonar:sonar -Dsonar.projektKey=HelloWorld -Dsonar.host.url=http://locahost:9000 -Dsonar.login=admin -Dsonar.password=admin123'
-        }
-    	}
- 
+
+  stage('SCM') {
+    checkout scm
+  }
+  stage('SonarQube Analysis') {
+    def mvn = tool 'Maven';
+    withSonarQubeEnv() {
+      sh "${mvn}/bin/mvn clean verify sonar:sonar"
+    }
+  }
+
         
         stage("deploy"){
         	steps{

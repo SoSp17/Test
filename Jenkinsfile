@@ -16,7 +16,7 @@ pipeline{
             steps{
         echo'building'
         /*mit dem Präfix sh kommt hier der Shell befehl der benötigt wird um den Build auszuführen*/
-        sh 'mvn clean package'
+        sh 'mvn clean compile'
        /*build quietPeriod: 5, job: 'Test1'*/
             }
         }

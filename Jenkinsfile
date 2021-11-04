@@ -24,11 +24,12 @@ pipeline{
             steps{
         	echo'testing'
         	sh 'mvn test'
+        	junit '**/target/surefire-reports/TEST-*.xml'
         	/*Sonarqube*/
             }
             post{
                 always {
-                    junit '**/target/surefire-reports/TEST-*.xml'
+                    
                 }
 
             }

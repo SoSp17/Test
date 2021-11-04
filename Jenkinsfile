@@ -27,14 +27,12 @@ pipeline{
 			junit '**/target/surefire-reports/TEST-*.xml' 
  			}
             }
-    stage('SonarQube'){
+    	stage('SonarQube'){
         withSonarQubeEnv('sonarserver')
         sh 'mvn sonar:sonar'
-    }
-
-
+    	}
  
-        }
+        
         stage("deploy"){
             steps{
         echo'deploying'

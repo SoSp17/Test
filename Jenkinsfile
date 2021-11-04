@@ -16,7 +16,7 @@ pipeline{
             steps{
         echo'building'
         /*mit dem Präfix sh kommt hier der Shell befehl der benötigt wird um den Build auszuführen*/
-        sh 'mvn clean package'
+        sh 'mvn clean compile'
        /*build quietPeriod: 5, job: 'Test1'*/
             }
         }
@@ -24,11 +24,12 @@ pipeline{
             steps{
         	echo'testing'
         	sh 'mvn test'
+        	junit '**/target/surefire-reports/TEST-*.xml'
         	/*Sonarqube*/
             }
             post{
                 always {
-                    junit "**/target/surfire-reports/TEST-*.xml"
+                    
                 }
 
             }

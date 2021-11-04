@@ -15,4 +15,13 @@ public class HelloWorldTest {
 		a=a+1;}
 	}
 
+	@Test
+	public void test2() {
+		int a=1;
+		while(a<9) {
+	
+		assertEquals(a+a,HelloWorld.math(a));
+		a=a+1;}
+	}
+
 }

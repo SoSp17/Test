@@ -20,7 +20,7 @@ public class HelloWorldTest {
 		int a=1;
 		while(a<9) {
 	
-		assertEquals(a,HelloWorld.math(a));
+		assertEquals(a+a,HelloWorld.math(a));
 		a=a+1;}
 	}
 

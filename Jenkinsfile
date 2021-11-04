@@ -29,7 +29,7 @@ pipeline{
         }
         
     	stage("SonarQube"){
-    	step{
+    	steps{
     	    
 
         withSonarQubeEnv('sonarserver')

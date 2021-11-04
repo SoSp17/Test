@@ -24,19 +24,30 @@ pipeline{
             steps{
         	echo'testing'
         	sh 'mvn test'
-			junit '**/target/surefire-reports/TEST-*.xml' 
+			 
  			}
-            }
-    	stage('SonarQube'){
+ 			post{
+ 			    always{
+ 			        junit '**/target/surefire-reports/TEST-*.xml'
+ 			        junit skipPublishingChecks:true, testResults: 'test-results.xml'
+ 			    }
+
+ 			}
+
+        }
+        
+    	stage("SonarQube"){
+    	steps{
         withSonarQubeEnv('sonarserver')
         sh 'mvn sonar:sonar'
+        }
     	}
  
         
         stage("deploy"){
-            steps{
+        	steps{
         echo'deploying'
-            }
+        }
         }
     }
     

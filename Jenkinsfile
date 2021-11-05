@@ -30,7 +30,7 @@ pipeline{
 
         }
         
-        stage('SonarQube Analysis') {
+        stage("SonarQube Analysis") {
         	steps{
         	def mvn = tool 'Maven'
         	withSonarQubeEnv() {

@@ -32,7 +32,7 @@ pipeline{
         
         stage('SonarQube Analysis') {
         	steps{
-        	def mvn = tool 'Default Maven'
+        	def mvn = tool 'Maven'
         	withSonarQubeEnv() {
         	sh "${mvn}/bin/mvn clean verify sonar:sonar"
         		}

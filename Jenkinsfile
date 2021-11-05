@@ -3,7 +3,8 @@ pipeline{
     tools{
     /*Hier Build Tool mit entsprechender Version einfügen*/
     maven 'apache-maven-3.8.3'
-    }    
+    }   
+    def mvn = tool 'Maven' 
     stages{
 		stage("checkout"){
             steps{
@@ -32,7 +33,7 @@ pipeline{
         
         stage("SonarQube Analysis") {
         	steps{
-        	def mvn = tool 'Maven'
+        	
         	withSonarQubeEnv() {
         	sh "${mvn}/bin/mvn clean verify sonar:sonar"
         		}

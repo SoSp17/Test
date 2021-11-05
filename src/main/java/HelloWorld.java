@@ -22,7 +22,6 @@ public class HelloWorld {
 
 		System.out.println(erg);
 		
-		System.out.println(erg);
 		scanner.close();
 	}
 
